@@ -1,0 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin-left: 40%;
+}
+#f2{
+    text-align: center;
+}
+.inline{
+    display: inline-flex;
+}
+button + button{
+    margin: 10px;
+}

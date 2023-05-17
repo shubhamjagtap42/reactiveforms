@@ -1,0 +1,42 @@
+<div class="container">
+  <p-toast position="top-right" key="tl"></p-toast>
+
+  <h1 id="f1">FORM1</h1>
+
+  <form #userlogin="ngForm" (ngSubmit)="submit()">
+    <div class="ex1">
+      <input type="text" name="emailid" placeholder="EMAILID" ngModel />
+
+      <br />
+
+      <input type="password" name="paswd" placeholder="password" ngModel />
+
+      <br />
+
+
+      <div class="card">
+
+        <button
+        type="submit"
+        pButton
+        pRipple
+        label="Success"
+        class="p-button-success mb-2"
+        ></button>
+      </div>
+    </div>
+    <div></div>
+  </form>
+
+  <p-dropdown (onChange)="onselect(state)" [options]="state" optionLabel="name">
+  </p-dropdown>
+  <p-dropdown
+    [options]="city"
+    placeholder="Select a City"
+    optionLabel=""
+  ></p-dropdown>
+
+  <select>
+    <option></option>
+  </select>
+</div>

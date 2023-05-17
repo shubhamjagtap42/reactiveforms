@@ -1,0 +1,296 @@
+<div class="container">
+  <div class="main">
+    <nav class="job">Job Portal</nav>
+  </div>
+  
+    <div *ngIf="isparam;">
+
+      <form [formGroup]="formdata" (ngSubmit)="submit()">
+        <div class="customer" >
+          <span class="p-float-label">
+            <input
+            id="first"
+            style="border: none; border-bottom: solid 1px"
+            type="text"
+            formControlName="firstname"
+            pInputText
+            required
+            />
+            <div
+            style="color: red"
+            *ngIf="
+            formdata.controls['firstname'].invalid &&
+            formdata.controls['firstname'].touched
+            "
+            >
+            First Name Is Required
+          </div>
+          
+        <label for="float-input">First Name</label>
+      </span>
+      <span class="p-float-label"></span>
+      <span class="p-float-label">
+        <input
+        id="first"
+        style="border: none; border-bottom: solid 1px"
+        type="text"
+        formControlName="lastname"
+        pInputText
+        required
+        />
+        <div
+        style="color: red"
+        *ngIf="
+        formdata.controls['lastname'].invalid &&
+        formdata.controls['lastname'].touched
+        "
+        >
+        Last Name Is Required
+      </div>
+      
+      <label for="float-input">Last Name</label>
+    </span>
+    <span class="p-float-label"></span>
+    </div>
+    
+    <div class="option" >
+      <label for="float-input">Prefered Contact</label>
+      <br />
+      <p-dropdown
+      optionLabel="name"
+      [options]="cities"
+      optionValue="code"
+      ></p-dropdown>
+    </div>
+    
+    <div class="next" >
+      <span class="p-float-label">
+        <input
+        id="second"
+        style="border: none; border-bottom: solid 1px"
+        type="text"
+        formControlName="emailid"
+        pInputText required
+        />
+        <div
+        style="color: red"
+        *ngIf="
+        formdata.controls['emailid'].invalid &&
+        formdata.controls['emailid'].touched
+        "
+        >
+        Email Id Is Required
+      </div>
+      
+      <label for="float-input">Email Id</label>
+    </span>
+    <span class="p-float-label"></span>
+    
+    <span class="p-float-label">
+      <input
+      id="second"
+      style="border: none; border-bottom: solid 1px"
+      type="text"
+      formControlName="phoneno"
+      pInputText
+      required
+      />
+      <div
+      style="color: red"
+      *ngIf="
+      formdata.controls['phoneno'].invalid &&
+      formdata.controls['phoneno'].touched
+      "
+      >
+      Phone No Is Required
+    </div>
+    
+    <label for="float-input">Phone No</label>
+  </span>
+  <span class="p-float-label"></span>
+</div>
+
+
+<div class="final" >
+  <table>
+    <tr>
+      <th>
+        <button
+        id="add"
+        pButton
+        pRipple
+        type="button"
+        (click)="finalclick(formdata.value)"
+        label="Add Skill"
+        class="p-button-raised p-button-warning p-button-text"
+        ></button>
+      </th>
+    </tr>
+        
+        <tr *ngFor="let d of skills" let i="index">
+          <td>
+            <span class="p-float-label">
+              <input
+              id="second"
+              style="border: none; border-bottom: solid 1px"
+              type="text"
+              formControlName="program"
+              pInputText
+              required
+              />
+              <div
+              style="color: red"
+              *ngIf="
+              formdata.controls['program'].invalid &&
+              formdata.controls['program'].touched
+              "
+              >
+              Program Is Required
+            </div>
+            
+            <label for="float-input">Programming Language</label>
+          </span>
+          <span class="p-float-label"></span>
+        </td>
+        <td>
+          <span class="p-float-label">
+            <input
+            id="second"
+            style="border: none; border-bottom: solid 1px"
+            type="text"
+            formControlName="experiance"
+            pInputText
+            required
+            />
+            <div
+            style="color: red"
+            *ngIf="
+            formdata.controls['experiance'].invalid &&
+            formdata.controls['experiance'].touched
+            "
+            >
+            Experiance Is Required
+          </div>
+          
+          <label for="float-input">Experiance</label>
+        </span>
+        <span class="p-float-label"></span>
+      </td>
+      
+        <td>
+            <button
+            pButton
+            pRipple
+            type="button"
+            (click)="deleterow(d)"
+            class="p-button-raised p-button-danger p-button-text"
+            ><i class="pi pi-trash"></i></button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      
+    </div>
+    
+    <div class="visi"  *ngIf="!visible">
+      <button
+      [disabled]="!formdata.valid"
+      pButton
+      pRipple
+      type="submit"
+      label="Submit"
+      class="p-button-raised p-button-success p-button-text"
+      ></button>
+      </div>
+      
+        <div class="visi" *ngIf="visible">
+        <button
+        pButton
+        pRipple
+        type="button"
+        label="Update"
+        (click)="updatedata(formdata.value)"
+        class="p-button-raised p-button-success p-button-text"
+        ></button>
+      </div>
+      <div style="float: right;">
+        <button
+        pButton
+        pRipple
+        type="button"
+        label="Data"
+        (click)="data()"
+        class="p-button-raised p-button-success p-button-text"
+        ></button>
+      </div>
+    
+    
+    
+  </form>
+</div>
+  
+    
+    <div *ngIf="isparam1">
+
+      <button
+      pButton
+      pRipple
+      type="button"
+      label="Back"
+      (click)="showjson()"
+      class="p-button-raised p-button-success p-button-text"
+      ></button>
+
+
+      <p-table [value]="arrlist" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>emailid</th>
+                <th>phoneno</th>
+                <th>program</th>
+                <th>exp</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr >
+                <td>{{product.firstname}}</td>
+                <td>{{product.lastname}}</td>
+                <td>{{product.phoneno}}</td>
+                <td>{{product.emailid}}</td>
+                <td>{{product.program}}</td>
+                <td>{{product.experiance}}</td>
+                <td><button
+                  pButton
+                  pRipple
+                  type="button"
+                  label="EDIT"
+                  (click)="update(product.id)"
+                  class="p-button-outlined p-button-secondary"
+                ></button></td>
+                <td><button
+                  pButton
+                  pRipple
+                  type="button"
+                  label="DELETE"
+                  (click)="delete(product.id)"
+                  class="p-button-outlined p-button-secondary"
+                ></button></td>
+            </tr>
+        </ng-template>
+    </p-table>
+      
+    
+  
+    </div>
+    </div>
+    
+  
+  
+    
+  
+    

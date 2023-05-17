@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: lightgray;
+    height: 400px;
+    width: 900px;
+}
+
+.main{
+    margin-left: 30%;
+    
+
+}
+.field-checkbox{
+    display: inline-flex;
+    margin: 10px;
+}
+p-checkbox{
+padding: 10px;
+}
+button{
+    margin-top: 20px;
+    background-color: white;
+}
+.customer{
+    display: inline-flex;
+    margin: 10px;
+}
+.delevery{
+    display: inline-flex;
+    margin: 10px;
+}
+.order{
+    background-color: grey;
+    width: 200px;
+    height: 50px;
+    float: right;
+    margin-right: 60px;
+    margin-top: -325px;
+}
+.order1{
+    background-color: white;
+    width: 200px;
+    height: 50px;
+    float: right;
+    margin-right: 60px;
+    margin-top: -274px;
+}
+.custorder{
+    margin-left: 20%;
+}

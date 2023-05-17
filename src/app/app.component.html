@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="header">
+    <h1 id="head">Welcome To Form</h1>
+    <i class="pi pi-bars" (click)="show()"></i>
+  </div>
+
+  <div class="title" style="margin-top: 40px">
+    <ng-template [ngIf]="Isavailable" pTemplate="header">
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Form1"
+        routerLink="/form1"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Form2"
+        routerLink="/form2"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Form3"
+        routerLink="/form3"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Form3-validation"
+        routerLink="/form3-validation"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="pizaaa app"
+        routerLink="/piza"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Job Portal"
+        routerLink="/job"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+      
+    </ng-template>
+  </div>
+
+  
+  
+<router-outlet></router-outlet>

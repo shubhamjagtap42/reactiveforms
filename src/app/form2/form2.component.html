@@ -1,0 +1,65 @@
+<h3 id="f2">Form2</h3>
+<div class="ex2">
+  <form [formGroup]="formdata" (ngSubmit)="submit(formdata.value)">
+    <div class="p-fluid grid">
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          type="text"
+          pInputText
+          formControlName="emailid"
+        />
+        <div
+          style="color: red"
+          *ngIf="
+            formdata.controls['emailid'].invalid &&
+            formdata.controls['emailid'].touched
+          "
+        >
+          Email Is Required
+        </div>
+
+        <label for="float-input">Email ID</label>
+      </span>
+    </div>
+    <br />
+    <br />
+    <div class="p-fluid grid">
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          type="password"
+          pInputText
+          formControlName="password"
+        />
+        <div
+          style="color: red"
+          *ngIf="
+            formdata.controls['password'].invalid &&
+            formdata.controls['password'].touched
+          "
+        >
+          Password Is Required
+        </div>
+        <label for="float-input">PASSWORD</label>
+      </span>
+    </div>
+    <br />
+    <br />
+    <button pButton type="submit" label="Log In" value="log in"></button>
+  </form>
+  <p>Email Entered Is : {{emailid}}</p>
+  <p>Password Entered Is : {{password}}</p>
+  <p *ngFor="let d of arr"> Entered Is : {{d.formdata}}</p>
+</div>
+<!-- 
+<table>
+    <tr>
+        <th>name</th>
+        <th>pass</th>
+    </tr>
+    <tr *ngFor="let d of arr">
+        <td>{{d.emailid}}</td>
+        <td>{{d.password}}</td>
+    </tr>
+</table> -->

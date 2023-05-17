@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.main{
+    background-color: gray;
+    margin-top: 30px;
+}
+.job{
+    font-size: xx-large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 20px;
+}
+.customer{
+    margin-left: 40px;
+    margin-top: 40px;
+    width: 100px;
+}
+#first{
+    width: 700px;
+    margin: 30px;
+}
+button{
+    margin-left: 50px;
+    margin-top: 40px;
+}
+.next{
+    display:inline-flex;
+    margin-left: 40px;
+    
+}
+#second{
+    margin: 30px;
+    width: 300px;
+}
+.option{
+    margin-left: 20%;
+}
+:host::ng-deep.p-dropdown{
+    width: 300px;
+}
+.next-one{
+    margin-left: 30%;
+}
+#add{
+   margin-left: 300px;
+}
+#last{
+    margin: 30px;
+    width: 300px;
+}
+.visi{
+    display: inline-flex;
+}

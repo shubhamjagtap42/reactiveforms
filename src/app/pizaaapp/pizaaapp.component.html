@@ -1,0 +1,269 @@
+<h4 id="pizaapp">Pizza App</h4>
+<div class="container">
+  <div class="main">
+    <div class="title" style="margin-top: 40px">
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="SMALL"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="MEDIUM"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="LARGE"
+        class="p-button-outlined p-button-secondary"
+      ></button>
+    </div>
+  </div>
+  <h4 id="topping">Toppings</h4>
+  <div class="field-checkbox">
+    <p-checkbox
+      name="group1"
+      value="New York"
+      [(ngModel)]="checked" 
+    ></p-checkbox>
+    <label for="ny">Sausage</label>
+
+    <p-checkbox
+      name="group1"
+      value="New York"
+      [(ngModel)]="checked1"
+    ></p-checkbox>
+    <label for="ny">Prepperoni</label>
+
+    <p-checkbox
+      name="group1"
+      value="New York"
+      [(ngModel)]="checked2"
+    ></p-checkbox>
+    <label for="ny">Ham</label>
+
+    <p-checkbox
+      name="group1"
+      value="New York"
+      [(ngModel)]="checked3"
+    ></p-checkbox>
+    <label for="ny">Olives</label>
+
+    <p-checkbox
+      name="group1"
+      value="New York"
+      [(ngModel)]="checked4"
+    ></p-checkbox>
+    <label for="ny">Bacon</label>
+
+    <p-checkbox
+      name="group1"
+      value="New York"
+      [(ngModel)]="checked5"
+      inputId="ny"
+    ></p-checkbox>
+    <label for="ny">Corn</label>
+
+    <p-checkbox
+      name="group1"
+      value="New York"
+      [(ngModel)]="checked6"
+      inputId="ny"
+    ></p-checkbox>
+    <label for="ny">Pineapple</label>
+
+    <p-checkbox
+      name="group1"
+      value="New York"
+      [(ngModel)]="checked7"
+      inputId="ny"
+    ></p-checkbox>
+    <label for="ny">Mushrooms</label>
+  </div>
+</div>
+<div class="order" *ngIf="showtext">
+  M Pizza
+  <i
+    class="pi pi-minus-circle"
+    style="float: right; margin-top: 13px; margin-right: 10px"
+  ></i>
+</div>
+
+<button class="order1">
+  <i class="pi pi-plus-circle"  (click)="showtable()"></i>
+</button>
+<div class="custorder"  *ngIf="avail;">
+    
+
+  <table>
+    <tr>
+      <th>Customer Order</th>
+    </tr>
+    <td>
+      <tr>First Name             :{{this.formdata.value.firstname}}</tr>
+      <tr>Last Name              :{{this.formdata.value.lastname}}</tr>
+      <tr>Phone Number           :{{this.formdata.value.phoneno}}</tr>
+      <tr>Street                 :{{this.formdata.value.street}}</tr>
+      <tr>Apartment No           :{{this.formdata.value.aptnumber}}</tr>
+      <tr>City                   :{{this.formdata.value.city}}</tr>
+      <tr>Floor                  :{{this.formdata.value.floor}}</tr>
+    </td>
+  </table>
+
+
+</div>
+
+ 
+
+
+<form [formGroup]="formdata"  (ngSubmit)="submit(formdata.value)" novalidate>
+  <div *ngIf="Isavailable">
+    <h3 id="cust">Customer Details</h3>
+
+    <div class="customer">
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          style="border: none; border-bottom: solid 1px"
+          type="text"
+          formControlName="firstname"
+          pInputText
+        />
+        
+        <div
+        style="color: red"
+        *ngIf="
+          formdata.controls['firstname'].invalid &&
+          formdata.controls['firstname'].touched
+        "
+      >First Name Is Required</div>
+      
+        <label for="float-input">First Name</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          style="border: none; border-bottom: solid 1px"
+          type="text"
+          formControlName="lastname"
+          pInputText
+        />
+        <div
+        style="color: red"
+        *ngIf="
+          formdata.controls['lastname'].invalid &&
+          formdata.controls['lastname'].touched
+        "
+      >Last Name Is Required</div>
+
+        <label for="float-input">Last Name</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          style="border: none; border-bottom: solid 1px"
+          type="text"
+          formControlName="phoneno"
+          pInputText
+        />
+        <div
+          style="color: red"
+          *ngIf="
+            formdata.controls['phoneno'].invalid &&
+            formdata.controls['phoneno'].touched
+          "
+        > No Should be In The Range</div>
+        <label for="float-input">Phone Number</label>
+      </span>
+    </div>
+    <h3 id="del">Delivery Address</h3>
+
+    <div class="delevery">
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          style="border: none; border-bottom: solid 1px"
+          type="text"
+          formControlName="street"
+          pInputText
+        />
+        <div
+        style="color: red"
+        *ngIf="
+          formdata.controls['street'].invalid &&
+          formdata.controls['street'].touched
+        "
+      > Street Is Required</div>
+        <label for="float-input">Street</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          style="border: none; border-bottom: solid 1px"
+          type="text"
+          formControlName="aptnumber"
+          pInputText
+        />
+        <div
+        style="color: red"
+        *ngIf="
+          formdata.controls['aptnumber'].invalid &&
+          formdata.controls['aptnumber'].touched
+        "
+      >Apart Is Required</div>
+        <label for="float-input">Apt Number</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          style="border: none; border-bottom: solid 1px"
+          type="text"
+          formControlName="city"
+          pInputText
+        />
+        <div
+        style="color: red"
+        *ngIf="
+          formdata.controls['city'].invalid &&
+          formdata.controls['city'].touched
+        "
+      >City Is Required</div>
+        <label for="float-input">City</label>
+      </span>
+      <span class="p-float-label">
+        <input
+          id="float-input"
+          style="border: none; border-bottom: solid 1px"
+          type="text"
+          formControlName="floor"
+          pInputText
+        />
+        <div
+        style="color: red"
+        *ngIf="
+          formdata.controls['floor'].invalid &&
+          formdata.controls['floor'].touched
+        "
+
+      >Floor Is Required</div>
+        <label for="float-input">Floor</label>
+      </span>
+    </div>
+    <button
+      pButton
+      pRipple
+      type="submit"
+      label="Submit"
+      class="p-button-outlined p-button-rounded p-button-success"
+    ></button>
+  </div>
+  
+</form>

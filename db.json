@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "fname": "casdfwfvd",
+      "lname": "sfrhtghdf",
+      "age": 24,
+      "email": "sagar@gmail.com",
+      "mobile": "dscvdvd",
+      "password": "1312312312",
+      "cpassword": "224242424",
+      "id": 1
+    },
+    {
+      "fname": "scscs",
+      "lname": "cfsfvdvs",
+      "age": 14,
+      "email": "sagar@gmail.com",
+      "mobile": "scvsfdc",
+      "password": "",
+      "cpassword": "",
+      "id": 2
+    }
+  ]
+}
